@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的表白</title>
+    <style>
+        /* 引入更圆润的个性字体（这里使用系统兼容的手写风格模拟） */
+        @font-face {
+            font-family: 'CuteHandwriting';
+            src: local('幼圆'), local('YouYuan'), local('方正卡通体'), cursive;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-image: url('https://p9-flow-imagex-sign.byteimg.com/ocean-cloud-tos/9da59db0f47542adb605987966b83712.jpeg~tplv-a9rns2rl98-image.png?rk3s=49177a0b&x-expires=2060176617&x-signature=RuAQDWRDm32pv3n93%2F3zmQlipE4%3D');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        #confession-text {
+            font-family: 'CuteHandwriting';
+            font-size: 34px;
+            color: #ff69b4; /* 桃红色字体 */
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 5px rgba(255, 200, 220, 0.5); /* 柔和渐变阴影 */
+            letter-spacing: 2px; /* 字符间距增加呼吸感 */
+        }
+
+        .button {
+            padding: 16px 32px;
+            margin: 20px;
+            font-family: 'CuteHandwriting';
+            font-size: 24px;
+            cursor: pointer;
+            border: none;
+            border-radius: 20px; /* 超圆润按钮 */
+            transition: transform 0.3s ease; /* 点击时的平滑动画 */
+        }
+
+        #reject {
+            background: #ffcccc;
+            color: #ff4081; /* 更深的拒绝色 */
+            box-shadow: 0 0 10px rgba(255, 100, 160, 0.3); /* 按钮发光效果 */
+        }
+
+        #accept {
+            background: #ccffcc;
+            color: #00ff7f; /* 亮眼的同意色 */
+            box-shadow: 0 0 15px rgba(0, 255, 127, 0.4); /* 按钮发光效果 */
+        }
+
+        /* 点击时按钮轻微缩放 */
+        .button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div id="confession-text">张海宇，我喜欢你，能不能做我女朋友</div>
+    <button class="button" id="reject">拒绝</button>
+    <button class="button" id="accept">同意</button>
+
+    <script>
+        const rejectBtn = document.getElementById('reject');
+        const acceptBtn = document.getElementById('accept');
+
+        function moveReject() {
+            const x = Math.random() * (window.innerWidth - rejectBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - rejectBtn.offsetHeight);
+            rejectBtn.style.position = 'absolute';
+            rejectBtn.style.left = x + 'px';
+            rejectBtn.style.top = y + 'px';
+        }
+
+        setInterval(moveReject, 80); // 拒绝按钮移动速度调整（数值越小越快）
+
+        rejectBtn.addEventListener('click', function () {
+            alert("真嘟吗");
+            moveReject();
+        });
+
+        acceptBtn.addEventListener('click', function () {
+            alert("我就知道，我也爱你");
+        });
+    </script>
+</body>
+</html>
